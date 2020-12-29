@@ -14,6 +14,7 @@ include_directories(
 
 add_library(${PROJECT_NAME}
     src/forTxt.cc
+    src/Eigen_CV_G2O_Convert.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
