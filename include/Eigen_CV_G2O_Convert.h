@@ -10,6 +10,6 @@ public:
     ~Eigen_CV_G2O_Convert() {}
 
 public:
-    static Eigen::Matrix<double,4,4> xytz2EigenM4(double x, double y, double tz);
+    static Eigen::Matrix<float,4,4> xytz2EigenM4(double x, double y, double tz);
 
 };
