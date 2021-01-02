@@ -10,7 +10,7 @@ Txt::~Txt()
 {
 }
 
-bool Txt::readTra(const std::string& fileAdd, std::vector<double> &vTime, std::vector< Eigen::Matrix<float,4,4> > &vTra, std::vector<std::string> &vImgName)
+bool Txt::readTra(const std::string& fileAdd, std::vector<double> &vTime, std::vector<cv::Vec3d> &v3Tra, std::vector< Eigen::Matrix<float,4,4> > &vTra, std::vector<std::string> &vImgName)
 {
     std::ifstream f;
     f.open(fileAdd.c_str());
@@ -35,6 +35,7 @@ bool Txt::readTra(const std::string& fileAdd, std::vector<double> &vTime, std::v
             ss >> t;
             vTime.push_back(t);
             ss>>x>>y>>theta;
+            v3Tra.push_back(cv::Vec3d(x,y,theta));
             vTra.push_back(Eigen_CV_G2O_Convert::xytz2EigenM4(x,y,theta)); //TODO
             ss >> image;
             vImgName.push_back(image+".jpg.png");

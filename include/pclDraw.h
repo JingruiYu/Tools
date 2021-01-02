@@ -24,7 +24,7 @@ public:
     pclDraw();
     ~pclDraw();
 
-    void DrawInTwb_ptr_(const Eigen::Matrix<float,4,4> &T, double r, double g, double b, std::string name);
+    void DrawInTwb_ptr_(const Eigen::Matrix<float,4,4> &T, double rsize, double r, double g, double b, std::string name);
     void DrawPointCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr Cloud, const std::string cloudName);
     void ConvertImg2Cloud(cv::Mat& img, pcl::PointCloud<pcl::PointXYZ>::Ptr EdgeCloud, pcl::PointCloud<pcl::PointXYZ>::Ptr FreeCloud);
 };

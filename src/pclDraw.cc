@@ -20,7 +20,7 @@ pclDraw::~pclDraw()
 {
 }
 
-void pclDraw::DrawInTwb_ptr_(const Eigen::Matrix<float,4,4> &T, double r, double g, double b, std::string name)
+void pclDraw::DrawInTwb_ptr_(const Eigen::Matrix<float,4,4> &T, double rsize, double r, double g, double b, std::string name)
 {
     Eigen::Affine3f Draw_pose;
     Draw_pose.matrix() = T;
@@ -31,7 +31,7 @@ void pclDraw::DrawInTwb_ptr_(const Eigen::Matrix<float,4,4> &T, double r, double
 
     Twb_ptr_->updateShapePose("vehicle", Draw_pose);
     Twb_ptr_->updateCoordinateSystemPose("vehicle_frame", Draw_pose);
-    Twb_ptr_->addSphere(Tpoint, 0.1, r, g, b, name);
+    Twb_ptr_->addSphere(Tpoint, rsize, r, g, b, name);
     Twb_ptr_->spinOnce();
 }
 
