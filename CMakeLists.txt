@@ -40,3 +40,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/examples)
 
 add_executable(drawPC tool/drawPC.cc)
 target_link_libraries(drawPC ${PROJECT_NAME})
+
+add_executable(opencvRel tool/opencvRel.cpp)
+target_link_libraries(opencvRel ${PROJECT_NAME})
